@@ -28,14 +28,9 @@
 /* Utile dans le cas d'un menu sticky afin que le titre Hn cliqué dans le menu reste visible */
 /* Sans ce code, le défilement vers le Hn désiré risque de placer le titre Hn concerné derrière le menu sticky */
 
-h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {position: relative;}
-h1[id]::before, h2[id]::before, h3[id]::before, h4[id]::before, h5[id]::before, h6[id]::before {
-    content: "";
-    display: block;
-    height: 100px; /* Remplacez cette valeur par la hauteur de votre menu sticky +20 à 60 px selon vos préférences */
+h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
+    padding-top: 100px; /* Remplacez cette valeur par la hauteur de votre menu sticky */
     margin-top: -100px; /* Cette valeur doit être égale à l'opposé de la hauteur définie ci-dessus */
-    visibility: hidden;
-    pointer-events: none;
 }
 
 /****************** Et Voilà **********************/
