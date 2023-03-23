@@ -2,11 +2,12 @@
 /* Ce code est à insérer dans le functions.php du thème enfant de votre installation wordpress */
 
 
+f
 function generate_sommaire($atts) {
     // Récupérez les attributs du shortcode
     $attributes = shortcode_atts(
         array(
-            'hn' => '2-4', // Valeur par défaut du range (H2 à H4)
+            'hn' => '2-3',// Valeur par défaut du range (H2 à H3)
             'class_prefix' => 'sommaire-h', // Préfixe de la classe CSS pour chaque niveau Hn
         ),
         $atts
@@ -19,15 +20,14 @@ function generate_sommaire($atts) {
     $content = get_the_content();
 
     // Utilisez une expression régulière pour extraire les titres Hn avec le range spécifié
-    $pattern = "/<h([$min-$max]{1})[^>]*>(.*?)<\/h([$min-$max]{1})>/i";
+    $pattern = "/<h([$min-$max]{1})([^>]*)>(.*?)<\/h([$min-$max]{1})>/i";
     preg_match_all($pattern, $content, $matches, PREG_SET_ORDER);
 
     // Générer la table des matières
-    // Ajouter un titre automatique entre <nav> et <ul> pour annoncer votre table des matières si besoin, ex <p class='titresommaire'>Sommaire</p>
-    $sommaire = "<nav class='navsommaire'><ul class='sommaire'>";
+    $sommaire = "<nav class=' bgclair bloc navsommaire'><p class='titresommaire'>Sommaire</p><ul class='sommaire'>";
     foreach ($matches as $match) {
         $level = $match[1];
-        $title = $match[2];
+        $title = $match[3];
         $slug = sanitize_title($title);
         $css_class = $attributes['class_prefix'] . $level;
         $sommaire .= "<li class='{$css_class}'><a href='#{$slug}'>{$title}</a></li>";
@@ -36,6 +36,7 @@ function generate_sommaire($atts) {
 
     return $sommaire;
 }
+
 
 function add_id_to_headings($content) {
     // Définir le range de Hn à traiter (dans cet exemple, de H1 à H6)
