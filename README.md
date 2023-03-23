@@ -11,8 +11,8 @@
  
  ## Fonctionnement
  
-* Inserer une table des matière avec le shortcode [sommaire]  (gère de h2 à h3 par defaut)
+* Inserer une table des matière avec le shortcode **[sommaire]**  *(gère de h2 à h3 par defaut)*
 
 ou
 
-* Personnalsier l'intervale Hn à prendre en compte, par exemple pour h1 à h4 utlisez le shortcode suivant [sommaire hn="1-4"]
+* Personnalsier l'intervale Hn à prendre en compte, par exemple pour h1 à h4 utlisez le shortcode suivant **[sommaire hn="1-4"]**
