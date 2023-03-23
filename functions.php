@@ -23,7 +23,7 @@ function generate_sommaire($atts) {
     preg_match_all($pattern, $content, $matches, PREG_SET_ORDER);
 
     // Générer la table des matières
-    // Ajouter un titre automatique entre <nav> et <ul> pour annoncer votre table des matières si besoin, ex <p class="titresommaire">Sommaire</p>
+    // Ajouter un titre automatique entre <nav> et <ul> pour annoncer votre table des matières si besoin, ex <p class='titresommaire'>Sommaire</p>
     $sommaire = "<nav class='navsommaire'><ul class='sommaire'>";
     foreach ($matches as $match) {
         $level = $match[1];
