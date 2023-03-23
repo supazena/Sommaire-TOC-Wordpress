@@ -13,7 +13,6 @@
 /* class css pour <ul> */
 .sommaire {}
 
-
 /* Personnaliser le style du menu élement par élément si vous le désirer */
 /* Personnalise chaque <li> en fonction de son niveau Hn */
 .sommaire-h1 {}
@@ -23,6 +22,7 @@
 .sommaire-h5 {}
 .sommaire-h6 {}
 
+/**************************************************/
 
 /* UX En option, décalage vertical du défilement */
 /* Utile dans le cas d'un menu sticky afin que le titre Hn cliqué dans le menu reste visible */
@@ -38,6 +38,6 @@ h1[id]::before, h2[id]::before, h3[id]::before, h4[id]::before, h5[id]::before, 
     pointer-events: none;
 }
 
-
+/****************** Et Voilà **********************/
 
 </style>
