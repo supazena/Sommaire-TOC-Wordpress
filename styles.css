@@ -1,0 +1,26 @@
+<style>
+
+/* Styles CSS pour Sommaire */
+/* Par defaut, la function créée utilise le CSS de votre thème */
+/* Voici la liste des class utilisées pour personnaliser votre sommaire */
+
+/* Bloc Conteneur - Il s'agit de la balise html semantique <nav> qui englobe tout le bloc sommaire*/
+.navsommaire {} 
+
+/* Style du titre de votre sommaire (par defaut il n'est pas insérer dans la function, consultuer les commentaires de la function pour l'ajouter*/
+.titresommaire {}
+
+/* class css pour <ul> */
+.sommaire {}
+
+
+/* Personnaliser le style du menu élement par élément si vous le désirer */
+/* Personnalise chaque <li> en fonction de son niveau Hn */
+.sommaire-h1 {}
+.sommaire-h2 {}
+.sommaire-h3 {}
+.sommaire-h4 {}
+.sommaire-h5 {}
+.sommaire-h6 {}
+
+</style>
