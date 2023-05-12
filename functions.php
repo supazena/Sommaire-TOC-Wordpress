@@ -43,12 +43,16 @@ function add_id_to_headings($content) {
     $max = 6;
 
     // Utilisez une expression régulière pour ajouter des ID aux titres Hn
-    $pattern = "/<h([$min-$max]{1})[^>]*>(.*?)<\/h([$min-$max]{1})>/i";
+    $pattern = "/<h([$min-$max]{1})([^>]*)>(.*?)<\/h([$min-$max]{1})>/i";
     $updated_content = preg_replace_callback($pattern, function($match) {
         $level = $match[1];
-        $title = $match[2];
+        $title = $match[3];
+        $attributes = $match[2];
         $slug = sanitize_title($title);
-        return "<h{$level} id='{$slug}'>{$title}</h{$level}>";
+        if (strpos($attributes, 'id=') === false) {
+            $attributes .= " id='{$slug}'";
+        }
+        return "<h{$level}{$attributes}>{$title}</h{$level}>";
     }, $content);
 
     return $updated_content;
