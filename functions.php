@@ -2,7 +2,6 @@
 /* Ce code est à insérer dans le functions.php du thème enfant de votre installation wordpress */
 
 
-f
 function generate_sommaire($atts) {
     // Récupérez les attributs du shortcode
     $attributes = shortcode_atts(
